@@ -1,19 +1,26 @@
 import React from "react";
-import ContentNav from "../Components/ContentNav";
+import ContentNav from "../Components/Partners";
 import LandingImage from "../Components/LandingImage";
 import Header from "../Components/Navbar";
-import PageNav from "../Components/PageNav"
-import HomeContent1 from "../Components/HomeContent1"
+import PageNav from "../Components/PageNav";
+import HomeContent1 from "../Components/HomeContent1";
+import Footer from "../Components/Footer";
+import KnowUs from "../Components/KnowUs";
+import Partners from "../Components/Partners";
 
 function Home() {
-  return <div>
+  return (
+    <div>
       <Header />
       <LandingImage />
-      <ContentNav />
       <PageNav />
       <HomeContent1 />
-
-  </div>;
+      <KnowUs />
+      <Partners />
+      <PageNav />
+      <Footer />
+    </div>
+  );
 }
 
 export default Home;

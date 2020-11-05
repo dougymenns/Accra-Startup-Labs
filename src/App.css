@@ -72,19 +72,14 @@ p {
   line-height: 28px;
 }
 
-/* .home1 {
-  background: url("./images/home1.png");
-  background-size: cover;
-  background-position: center;
-  min-height: 800px;
-  margin-top: 15px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-} */
-
 .home_1 {
   background-image: url("./images/home1.png");
+  background-position: center;
+  background-size: cover;
+  height: 650px;
+}
+.about-us-pic {
+  background-image: url("./images/whoweare.png");
   background-position: center;
   background-size: cover;
   height: 650px;
@@ -121,17 +116,40 @@ p {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 2;
 }
 .page-nav-background2 {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 2;
 }
 
 .page-nav-content {
   margin-top: 15%;
+}
+ul {
+  list-style: none;
+  padding: 0px 0px;
+}
+ul li {
+  margin-top: 5px;
+  cursor: pointer;
+}
+.MuiInput-underline:not(.MuiInput-disabled-23):not(.MuiInput-focused-22):not(.MuiInput-error-25):before {
+  border-bottom: 1px solid rgb(255, 255, 255) !important;
+}
+.MuiGridListTile-imgFullWidth {
+  top: 50%;
+  width: 100%;
+  position: relative;
+  transform: translateY(-50%);
+}
+.about-us-text-header {
+  width: 80%;
+  color: white;
+  justify-content: space-around;
+  text-align: left;
+  font-size: 50px;
+  margin-top: 350px !important;
 }
 
 @media screen and (max-width: 991px) and (min-width: 568px) {
@@ -175,12 +193,13 @@ p {
   height: 600px;
   margin: 20px;
   padding: 30px;
+  font-size: 13px;
 }
 .home-content-1-right-container {
   height: 600px;
   margin: 12px 10px;
   padding: 10px;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
 }
 .right-container-pic {
   margin: 0px 70px;
@@ -192,15 +211,98 @@ p {
   height: 594px;
 }
 
+.lg-know-us-container {
+  display: flex;
+  width: 75%;
+  margin: auto;
+  align-items: center;
+}
+
+.lg-know-us-left {
+  width: 612px;
+  height: 377px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  align-items: center;
+  background-image: url("./images/home4.png");
+  background-repeat: no-repeat;
+  background-size: fill;
+  background-position: right;
+}
+
+.lg-know-us-background {
+  position: absolute;
+  float: right;
+  height: 441px;
+  right: 0;
+  z-index: 10000;
+  /* top: 0; */
+}
+
+.lg-know-us-right {
+  background: white;
+  float: left;
+  height: 300px;
+  z-index: 1000;
+  width: 600px;
+  text-align: center;
+  padding: 20px 50px;
+}
+
+.lg-know-us-right h3 {
+  font-weight: bold;
+  color: #5c5c5c;
+  font-size: 30px;
+}
+
+.lg-know-us-first-element {
+  text-align: left;
+}
+
+.lg-know-us-second-element {
+  text-align: left;
+}
+.lg-know-us-third-element {
+  text-align: left;
+  margin-top: 20px;
+}
+.lg-know-us-p {
+  font-size: 23px;
+}
+.know-us-third-element {
+  text-align: left;
+  display: flex;
+  font-weight: bold;
+}
+.connect {
+  background: url("./images/home5.png");
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  align-items: center;
+}
+
+.connect h1 {
+  margin: 15px;
+  font-weight: bold;
+  color: white;
+  font-size: 80px;
+  padding: 185px 370px;
+}
+
 @media screen and (max-width: 568px) and (min-width: 0px) {
   p {
-    font-size: 16px;
+    color: white;
+    font-size: 13px;
   }
   .home_1 {
     height: 300px !important;
   }
+  .about-us-pic {
+    height: 100px !important;
+  }
   .home1-text-container {
-    height: 300px;
+    height: 50px;
     text-align: center;
   }
   .image-text {
@@ -212,6 +314,14 @@ p {
   }
   .image-text-header p {
     font-size: 13px;
+  }
+  .about-us-text-header {
+    width: 80%;
+    color: white;
+    justify-content: space-around;
+    text-align: left;
+    font-size: 10px;
+    margin-top: 50px !important;
   }
   .image-text-header {
     width: 80%;
@@ -233,18 +343,17 @@ p {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 2;
     height: 120px;
   }
   .page-nav-background2 {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 2;
     height: 120px;
   }
   .page-nav-content {
     margin-top: 5%;
+    z-index: 1000;
   }
   .page-nav-content p {
     margin-top: 5%;
@@ -264,7 +373,7 @@ p {
     line-height: 28px;
   }
   .home-content-1 {
-    height: 500px;
+    height: 350px;
   }
   .home-content-1 h3 {
     font-weight: 700;
@@ -273,20 +382,107 @@ p {
   .home-content-1-left-container {
     height: 320px;
     margin: 10px !important;
-    padding: 10px !important;
+    padding: 5px !important;
   }
   .home-content-1-right-container {
     height: 300px;
+    width: 157px;
     margin: 12px 10px !important;
     padding: 10px;
-    background-color:#EEEEEE;
+    background-color: #eeeeee;
   }
   .right-container-pics {
     margin-top: 20px;
-    height: 320px
+    height: 320px;
   }
   .right-container-pics img {
     max-width: 250px;
     max-height: 250px;
+  }
+  .know-us-container {
+    position: relative;
+    height: 230px;
+    background: #e5f8ee;
+    padding-top: 5px;
+  }
+  .know-us-background {
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+  .know-us-container img {
+    height: 170px;
+    width: 170px;
+    z-index: 100;
+  }
+  .know-us-left {
+    width: 230px;
+    height: 250px;
+    background-image: url("./images/home4.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .know-us-right {
+    background: white;
+    float: left;
+    text-align: center;
+    padding: 0px 10px;
+  }
+
+  .know-us-right h3 {
+    font-weight: bold;
+    color: #5c5c5c;
+    font-size: 16px;
+    margin-top: 0px;
+  }
+
+  .know-us-first-element {
+    text-align: left;
+  }
+
+  .know-us-second-element {
+    text-align: left;
+  }
+  .know-us-p {
+    font-size: 15px;
+    margin: 0px;
+  }
+  .know-us-third-element {
+    text-align: left;
+    display: flex;
+  }
+  .connect {
+    background: url("./images/home5.png");
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    align-items: center;
+  }
+
+  .connect h1 {
+    margin: 15px;
+    font-weight: bold;
+    color: white;
+    font-size: 23px;
+    padding: 55px 20px;
+  }
+  ul {
+    list-style: none;
+    padding: 0px 0px;
+  }
+  ul li {
+    margin-top: 5px;
+  }
+  .footer-email {
+    width: 150px;
+    height: 30;
+    word-break: break-all;
+  }
+  .partners-container {
+    width: 100%;
+    margin: auto;
+    font-size: 15px;
+    text-align: center;
+    color: #5c5c5c;
   }
 }

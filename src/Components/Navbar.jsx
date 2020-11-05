@@ -51,7 +51,6 @@ const Header = (props) => {
   const theme = useTheme();
   //media query init
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-  console.log(isMobile);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);

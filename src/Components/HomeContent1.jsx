@@ -65,6 +65,7 @@ function HomeContent1() {
                       <img src={HomeContent1Picture} />
                     </div>
                   </div>
+                  
                 ) : (
                   <div className="home-content-1-right-container">
                     <div className="right-container-pic">
