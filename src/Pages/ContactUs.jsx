@@ -2,21 +2,18 @@ import React from "react";
 
 import Header from "../Components/Navbar";
 import Footer from "../Components/Footer";
-
+import Contact from "../Components/Contact";
 import WhoWeAre from "../Components/WhoWeAre";
-import StartupDescription from "../Components/StartupDescription";
-import Hq from "../Components/Hq";
 
-function AboutUs() {
+function ContactUs() {
   return (
     <div>
       <Header />
       <WhoWeAre />
-      <StartupDescription />
-      <Hq />
+      <Contact />
       <Footer />
     </div>
   );
 }
 
-export default AboutUs;
+export default ContactUs;

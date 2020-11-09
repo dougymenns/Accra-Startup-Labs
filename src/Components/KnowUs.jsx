@@ -12,6 +12,8 @@ import {
 } from "@material-ui/core";
 import home4background from "../images/home4background.png";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import { Link } from "react-router-dom";
+
 
 function KnowUs() {
   //using theme for mobile rendering
@@ -38,14 +40,16 @@ function KnowUs() {
                       on your way to building a business that scales.
                     </p>
                   </div>
-                  <div className="know-us-third-element">
-                    <p style={{ color: "green", fontSize: "13px" }}>
-                      Learn More{" "}
-                      <ArrowForwardIcon
-                        style={{ fontSize: "13px", paddingTop: "5px" }}
-                      />
-                    </p>
-                  </div>
+                  <Link to="/contact" style={{ textDecoration: "none" }}>
+                    <div className="know-us-third-element">
+                      <p style={{ color: "green", fontSize: "13px" }}>
+                        Learn More{" "}
+                        <ArrowForwardIcon
+                          style={{ fontSize: "13px", paddingTop: "5px" }}
+                        />
+                      </p>
+                    </div>
+                  </Link>
                 </div>
               </div>
               <Grid container>
@@ -77,15 +81,22 @@ function KnowUs() {
                       network of industry experts, mentors and investors, you’re
                       on your way to building a business that scales.
                     </p>
-                  </div>
+                  </div>                  <Link to="/contact" style={{ textDecoration: "none" }}>
+
                   <div className="know-us-third-element">
-                    <p style={{ color: "green", cursor: "pointer",fontSize: "23px" }}>
+                    <p
+                      style={{
+                        color: "green",
+                        cursor: "pointer",
+                        fontSize: "23px",
+                      }}
+                    >
                       Learn More
                       <ArrowForwardIcon
                         style={{ fontSize: "18px", paddingTop: "5px" }}
                       />
                     </p>
-                  </div>
+                  </div></Link>
                 </div>
               </div>
               <Grid container>

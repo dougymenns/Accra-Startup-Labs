@@ -113,7 +113,7 @@ function Footer(props) {
                 <div className="footer-email">
                   <li>startupaccra18@gmail.com</li>
                 </div>
-                <li>+233 000 000 0000 / +233 000 000 0000</li>
+                <li>+233554349393 /+233209335761</li>
               </ul>
             </Grid>
           </Grid>

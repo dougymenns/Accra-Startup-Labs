@@ -3,17 +3,17 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import { Grid, Tabs, Tab, Paper } from "@material-ui/core";
+import { Grid, Tabs, Tab } from "@material-ui/core";
 import Menu from "@material-ui/core/Menu";
 import { withRouter } from "react-router-dom";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import "../App.css";
 import Logo from "../images/logo.png";
-import HomeImage from "../images/home1.png";
+import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -51,6 +51,7 @@ const Header = (props) => {
   const theme = useTheme();
   //media query init
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  console.log(isMobile);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -64,13 +65,13 @@ const Header = (props) => {
   return (
     <div className={classes.root}>
       <AppBar
-        title={<img src={Logo} alt="Logo" height="60px" />}
+        title={<img src={Logo} alt="Logo" height="60px" onClick={() => handleMenuClick("/")} />}
         position="static" 
         style={{backgroundColor: "white"}}
       >
         <Toolbar color="black">
           <Typography variant="h6" className={classes.title}>
-            <img src={Logo} alt="Logo" height="60px" />
+            <img src={Logo} alt="Logo" height="60px" onClick={() => handleMenuClick("/")} />
           </Typography>
           {isMobile ? (
             <div>
@@ -150,9 +151,9 @@ const Header = (props) => {
                 className={classes.menuButton}
                 color="inherit"
               >
-                <button className="nav-cta-login " style={{ color: "#5C5C5C" }}>
+                <Link to="/"><button className="nav-cta-login " style={{ color: "#5C5C5C" }}>
                   Login
-                </button>
+                </button></Link>
               </IconButton>
             </>
           )}

@@ -18,7 +18,9 @@ p {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.Typography{
+  font-family: "Montserrat";
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -84,6 +86,12 @@ p {
   background-size: cover;
   height: 650px;
 }
+.hq {
+  background-image: url("./images/hq.png");
+  background-position: center;
+  background-size: cover;
+  height: 450px;
+}
 
 .home1-text-container {
   height: 650px;
@@ -133,6 +141,7 @@ ul {
 ul li {
   margin-top: 5px;
   cursor: pointer;
+  font-family: "Montserrat";
 }
 .MuiInput-underline:not(.MuiInput-disabled-23):not(.MuiInput-focused-22):not(.MuiInput-error-25):before {
   border-bottom: 1px solid rgb(255, 255, 255) !important;
@@ -150,6 +159,13 @@ ul li {
   text-align: left;
   font-size: 50px;
   margin-top: 350px !important;
+}
+.partners-container {
+  width: 100%;
+  margin: auto;
+  font-size: 25px;
+  text-align: center;
+  color: #5c5c5c;
 }
 
 @media screen and (max-width: 991px) and (min-width: 568px) {
@@ -297,6 +313,9 @@ ul li {
   }
   .home_1 {
     height: 300px !important;
+  }
+  .hq {
+    height: 200px !important;
   }
   .about-us-pic {
     height: 100px !important;

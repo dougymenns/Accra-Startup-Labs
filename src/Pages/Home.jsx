@@ -1,5 +1,5 @@
 import React from "react";
-import ContentNav from "../Components/Partners";
+import Hq from "../Components/Hq";
 import LandingImage from "../Components/LandingImage";
 import Header from "../Components/Navbar";
 import PageNav from "../Components/PageNav";
@@ -7,6 +7,7 @@ import HomeContent1 from "../Components/HomeContent1";
 import Footer from "../Components/Footer";
 import KnowUs from "../Components/KnowUs";
 import Partners from "../Components/Partners";
+import MiniEvents from "../Components/MiniEvents";
 
 function Home() {
   return (
@@ -16,8 +17,8 @@ function Home() {
       <PageNav />
       <HomeContent1 />
       <KnowUs />
-      <Partners />
-      <PageNav />
+      {/* <MiniEvents /> */}
+      <Partners /> <Hq />
       <Footer />
     </div>
   );
