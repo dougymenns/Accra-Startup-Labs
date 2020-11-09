@@ -17,7 +17,7 @@ function Home() {
       <PageNav />
       <HomeContent1 />
       <KnowUs />
-      {/* <MiniEvents /> */}
+      <MiniEvents />
       <Partners /> <Hq />
       <Footer />
     </div>
