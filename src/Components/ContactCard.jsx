@@ -13,7 +13,11 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import logo from "../images/logo.png";
-
+import emailjs from "emailjs-com";
+import Snackbar from "@material-ui/core/Snackbar";
+import CloseIcon from "@material-ui/icons/Close";
+import IconButton from "@material-ui/core/IconButton";
+import Alert from "@material-ui/lab/Alert";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,7 +64,39 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ContactCard() {
+  const [open, setOpen] = React.useState(false);
+  const handleClick = () => {
+    setOpen(true);
+  };
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
   const classes = useStyles();
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "gmail",
+        "template_0pd1979",
+        e.target,
+        "user_PandkpWF7AP7Pcme9JDP9"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("success");
+          handleClick();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
 
   return (
     <Grid component="main" className={classes.root}>
@@ -70,7 +106,7 @@ export default function ContactCard() {
         <Typography component="h1" variant="h5" className={classes.font}>
           Contact Us
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={sendEmail}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -100,25 +136,49 @@ export default function ContactCard() {
             name="message"
           />
           <Grid item xs={3}>
-              <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            style={{
-              fontFamily: "Montserrat",
-              color: "white",
-              fontWeight: "600",
-              backgroundColor: "#3ab675",
-            }}
-          >
-            Send
-          </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              style={{
+                fontFamily: "Montserrat",
+                color: "white",
+                fontWeight: "600",
+                backgroundColor: "#3ab675",
+              }}
+            >
+              Send
+            </Button>
           </Grid>
-          
         </form>
       </div>
+      <Snackbar
+        variant="success"
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message="Message was sent successfully"
+        action={
+          <React.Fragment>
+            <IconButton
+              size="small"
+              aria-label="close"
+              color="inherit"
+              onClick={handleClose}
+            >
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </React.Fragment>
+        }
+      >
+        <Alert severity="success">Message was sent successfully</Alert>
+      </Snackbar>
     </Grid>
   );
 }

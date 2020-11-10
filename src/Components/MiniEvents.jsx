@@ -157,10 +157,8 @@ function MiniEvents() {
           <Grid item xs={12} lg={3}>
             <div className="card" onClick={handleClickOpen("paper")}>
               <div className="card-header-container">
-                <h3 style={{ color: "white" }}>
-                  Ecosystem Collaboration for Growth
-                </h3>
-                <p style={{ color: "white" }}>hey</p>
+                <h3 style={{ color: "white" }}>Meeting Your Next Cofounder </h3>
+                <p style={{ color: "white" }}>Come . Connect . Build</p>
               </div>
             </div>
           </Grid>
@@ -238,11 +236,13 @@ function MiniEvents() {
                 </GridListTile>
               ))}
             </GridList>
-            <p></p>
+            <p style={{ color: "black" }}>
+              Scroll horizontally to view more pictures
+            </p>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} style={{ color: "#3AB675" }}>
             Close
           </Button>
         </DialogActions>

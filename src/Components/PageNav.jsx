@@ -12,10 +12,11 @@ import {
 } from "@material-ui/core";
 import homeicon from "../images/home2icon.png";
 import emailjs from "emailjs-com";
-import { Alert, AlertTitle } from '@material-ui/lab';
-import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-
+import { Alert, AlertTitle } from "@material-ui/lab";
+import Button from "@material-ui/core/Button";
+import Snackbar from "@material-ui/core/Snackbar";
+import CloseIcon from "@material-ui/icons/Close";
+import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +38,7 @@ function PageNav() {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const [open, setOpen] = React.useState(false);
 
   function sendEmail(e) {
     e.preventDefault();
@@ -52,15 +54,24 @@ function PageNav() {
         (result) => {
           console.log(result.text);
           console.log("success");
-<Alert severity="success">
-  <AlertTitle>Success</AlertTitle>
-  This is a success alert — <strong>check it out!</strong>
-</Alert>        },
+          handleClick();
+        },
         (error) => {
           console.log(error.text);
+          alert(error.toSrting())
         }
       );
   }
+  const handleClick = () => {
+    setOpen(true);
+  };
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
     <>
@@ -174,6 +185,31 @@ function PageNav() {
               </Grid>
             </Grid>
           </div>
+          <Snackbar
+            variant="success"
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={open}
+            autoHideDuration={6000}
+            onClose={handleClose}
+            message="Message was sent successfully"
+            action={
+              <React.Fragment>
+                <IconButton
+                  size="small"
+                  aria-label="close"
+                  color="inherit"
+                  onClick={handleClose}
+                >
+                  <CloseIcon fontSize="small" />
+                </IconButton>
+              </React.Fragment>
+            }
+          >
+            <Alert severity="success">Message was sent successfully</Alert>
+          </Snackbar>
         </form>
       ) : (
         <form onSubmit={sendEmail}>
@@ -273,6 +309,31 @@ function PageNav() {
               </Grid>
             </Grid>
           </div>
+          <Snackbar
+            variant="success"
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={open}
+            autoHideDuration={6000}
+            onClose={handleClose}
+            message="Message was sent successfully"
+            action={
+              <React.Fragment>
+                <IconButton
+                  size="small"
+                  aria-label="close"
+                  color="inherit"
+                  onClick={handleClose}
+                >
+                  <CloseIcon fontSize="small" />
+                </IconButton>
+              </React.Fragment>
+            }
+          >
+            <Alert severity="success">Message was sent successfully</Alert>
+          </Snackbar>
         </form>
       )}
     </>
