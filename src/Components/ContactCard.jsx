@@ -18,6 +18,8 @@ import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
 import Alert from "@material-ui/lab/Alert";
+import swal from "sweetalert";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,7 +92,7 @@ export default function ContactCard() {
         (result) => {
           console.log(result.text);
           console.log("success");
-          handleClick();
+          swal("Success!🎉 ", "Message sent successfully!", "success");
         },
         (error) => {
           console.log(error.text);
@@ -154,31 +156,6 @@ export default function ContactCard() {
           </Grid>
         </form>
       </div>
-      <Snackbar
-        variant="success"
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        message="Message was sent successfully"
-        action={
-          <React.Fragment>
-            <IconButton
-              size="small"
-              aria-label="close"
-              color="inherit"
-              onClick={handleClose}
-            >
-              <CloseIcon fontSize="small" />
-            </IconButton>
-          </React.Fragment>
-        }
-      >
-        <Alert severity="success">Message was sent successfully</Alert>
-      </Snackbar>
     </Grid>
   );
 }

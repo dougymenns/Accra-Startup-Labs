@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     border: "0",
   },
   left: {
-    marginTop: "130px",
+    marginTop: "93px",
   },
   paperContainer: {
     // height: "444px",

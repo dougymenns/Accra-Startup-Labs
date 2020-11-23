@@ -78,8 +78,9 @@ const useStyles = makeStyles((theme) => ({
     },
     containerCenter: {
         height: "1250px",
-        paddingLeft: "18px",
-        alignItems: "center"
+        paddingLeft: "33px",
+        alignItems: "center",
+        justify: "center"
       },
   },
 }));

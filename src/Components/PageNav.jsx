@@ -17,6 +17,7 @@ import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
+import swal from "sweetalert";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,6 +40,11 @@ function PageNav() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const [open, setOpen] = React.useState(false);
+  const [data, setData] = React.useState({
+    first_name: "",
+    last_name: "",
+    emal:""
+  })
 
   function sendEmail(e) {
     e.preventDefault();
@@ -54,11 +60,18 @@ function PageNav() {
         (result) => {
           console.log(result.text);
           console.log("success");
-          handleClick();
+          swal("Success!🎉 ", "Suscribed successfully!", "success");
+          setData({
+            first_name: "",
+            last_name: "",
+            emal:""
+          })
+
+          // handleClick();
         },
         (error) => {
           console.log(error.text);
-          alert(error.toSrting())
+          alert(error.toSrting());
         }
       );
   }
@@ -240,6 +253,7 @@ function PageNav() {
                     <TextField
                       id="standard-basic"
                       label="First Name"
+                      value={data.first_name}
                       type="text"
                       name="first_name"
                       InputProps={{
@@ -260,6 +274,7 @@ function PageNav() {
                     <TextField
                       id="standard-basics"
                       label="Last Name"
+                      value={data.last_name}
                       type="text"
                       name="last_name"
                       InputProps={{
@@ -280,6 +295,7 @@ function PageNav() {
                     <TextField
                       id="standard-basic"
                       label="Email"
+                      value={data.email}
                       type="email"
                       name="email"
                       InputProps={{
