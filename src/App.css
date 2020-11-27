@@ -84,6 +84,9 @@ p {
 .MuiTypography-h6{
   font-family: Montserrat;
 }
+.MuiTypography{
+  font-family: Montserrat;
+}
 .card p{
   margin-top: 0px;
   font-size: 15px;

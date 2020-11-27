@@ -168,7 +168,7 @@ function MiniEvents() {
                 <h3 style={{ color: "white" }}>
                   Ecosystem Collaboration for Growth
                 </h3>
-                <p style={{ color: "white" }}>hey</p>
+                <p style={{ color: "white" }}>Come . Connect . Build</p>
               </div>
             </div>
           </Grid>
@@ -178,7 +178,7 @@ function MiniEvents() {
                 <h3 style={{ color: "white" }}>
                   Ecosystem Collaboration for Growth
                 </h3>
-                <p style={{ color: "white" }}>hey</p>
+                <p style={{ color: "white" }}>Come . Connect . Build</p>
               </div>
             </div>
           </Grid>
@@ -188,13 +188,13 @@ function MiniEvents() {
                 <h3 style={{ color: "white" }}>
                   Ecosystem Collaboration for Growth
                 </h3>
-                <p style={{ color: "white" }}>hey</p>
+                <p style={{ color: "white" }}>Come . Connect . Build</p>
               </div>
             </div>
           </Grid>
         </Grid>
       </div>
-      <Link to="/events" style={{ textDecoration: "none" }}>
+      <Link to="#" style={{ textDecoration: "none" }}>
         <h4
           className={classes.h4}
           style={{
@@ -220,7 +220,7 @@ function MiniEvents() {
             component="h5"
             style={{ fontFamily: "Montserrat" }}
           >
-            Highlights from friday
+            Highlights from Meet Your Next Cofounder
           </Typography>
         </DialogTitle>
         <DialogContent dividers={scroll === "paper"}>

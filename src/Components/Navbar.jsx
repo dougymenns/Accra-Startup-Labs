@@ -124,22 +124,22 @@ const Header = (props) => {
                         label={"About Us"}
                       />
                       <Tab style={{color: "#5c5c5c",fontFamily: "Montserrat"}}
-                        onClick={() => handleMenuClick("/our-community")}
+                        onClick={() => handleMenuClick("#")}
                         label={"Our Community"}
                       />
                       <Tab style={{color: "#5c5c5c",fontFamily: "Montserrat"}}
-                        onClick={() => handleMenuClick("/events")}
+                        onClick={() => handleMenuClick("#")}
                         label={"Events"}
                       />
                       <Tab style={{color: "#5c5c5c",fontFamily: "Montserrat"}}
-                        onClick={() => handleMenuClick("/start-ups")}
+                        onClick={() => handleMenuClick("#")}
                         label={"Start Ups"}
                       />
                     </Tabs>
                   </Grid>
                 </Grid>
               </Grid>
-              <IconButton
+              {/* <IconButton
                 edge="start"
                 className={classes.menuButton}
                 color="inherit"
@@ -154,7 +154,7 @@ const Header = (props) => {
                 <Link to="/"><button className="nav-cta-login " style={{ color: "#5C5C5C" }}>
                   Login
                 </button></Link>
-              </IconButton>
+              </IconButton> */}
             </>
           )}
         </Toolbar>
