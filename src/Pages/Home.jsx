@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hq from "../Components/Hq";
 import LandingImage from "../Components/LandingImage";
 import Header from "../Components/Navbar";
@@ -10,6 +10,23 @@ import Partners from "../Components/Partners";
 import MiniEvents from "../Components/MiniEvents";
 
 function Home() {
+  const getVisits = async () => {
+    try {
+      const res = await fetch(`http://localhost:5000/home`, {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } catch (err) {
+      return err;
+    }
+  };
+
+  useEffect(() => {
+    getVisits();
+    return function () {};
+  }, []);
   return (
     <div>
       <Header />

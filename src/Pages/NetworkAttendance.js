@@ -23,8 +23,8 @@ import { toast } from "react-toastify";
 import BlockUi from "react-block-ui";
 import swal from "sweetalert";
 import { useHistory } from "react-router-dom";
+import "react-block-ui/style.css";
 
-const url = "http://localhost:5000/api/attendance";
 function Copyright() {
   return (
     <Typography
@@ -117,19 +117,30 @@ export default function NetworkAttendance() {
         body: JSON.stringify(state),
       });
       const results = await res.json();
-      if (results.success) {
+
+      if (results.success === "failed") {
         setLoading(false);
-        swal("Hurray!🎉 ", "Clocked In Successful!", "success");
-        return setState({
+        swal("Snap😐 ", "You Already Clocked In", "error");
+        setState({
           first_name: " ",
           last_name: " ",
           email: " ",
           suscribe: " ",
           about_us: " ",
         });
-        // return setTimeout(() => {
-        //   history.push("/");
-        // }, 3000);
+      } else if (results.success) {
+        setLoading(false);
+        swal("Hurray!🎉 ", "Clocked In Successful!", "success");
+        setState({
+          first_name: " ",
+          last_name: " ",
+          email: " ",
+          suscribe: " ",
+          about_us: " ",
+        });
+        return setTimeout(() => {
+          history.push("/");
+        }, 3000);
       }
     } catch (e) {
       return toast.error(e.toString());
@@ -144,7 +155,6 @@ export default function NetworkAttendance() {
         <Grid item xs={false} sm={4} md={7} className={classes.image} />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <div className={classes.paper}>
-            {/* <Avatar className={classes.avatar} src={Logo} className={classes.large} /> */}
             <Link href="/">
               <img src={Logo} width="250px" />
             </Link>
@@ -237,7 +247,6 @@ export default function NetworkAttendance() {
                   value={state.about_us}
                   id="demo-simple-select-outlined"
                   name="about_us"
-                  value={state.suscribe}
                   onChange={handleChange}
                   label="-- Select One --"
                 >
