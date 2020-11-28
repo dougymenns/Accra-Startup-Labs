@@ -12,7 +12,7 @@ import MiniEvents from "../Components/MiniEvents";
 function Home() {
   const getVisits = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/home`, {
+      const res = await fetch(`https://startup-accra.herokuapp.com/home`, {
         method: "get",
         headers: {
           "Content-Type": "application/json",

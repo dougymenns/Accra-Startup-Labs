@@ -109,7 +109,7 @@ export default function NetworkAttendance() {
     event.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/attendance`, {
+      const res = await fetch(`https://startup-accra.herokuapp.com/api/attendance`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
