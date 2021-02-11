@@ -24,6 +24,7 @@ import BlockUi from "react-block-ui";
 import swal from "sweetalert";
 import { useHistory } from "react-router-dom";
 import "react-block-ui/style.css";
+import PNG from "../images/frame.png"
 
 function Copyright() {
   return (
@@ -109,13 +110,16 @@ export default function NetworkAttendance() {
     event.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(`https://startup-accra.herokuapp.com/api/attendance`, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(state),
-      });
+      const res = await fetch(
+        `https://startup-accra.herokuapp.com/api/attendance`,
+        {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(state),
+        }
+      );
       const results = await res.json();
 
       if (results.success === "failed") {
@@ -156,7 +160,7 @@ export default function NetworkAttendance() {
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <div className={classes.paper}>
             <Link href="/">
-              <img src={Logo} width="250px" />
+              <img src={PNG} width="250px" />
             </Link>
             <Typography
               component="h1"
